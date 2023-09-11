@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SurveyApp</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="personal_info_fragment_label" translatable="false">Second Fragment</string>
+    <string name="previous" translatable="false">Previous</string>
+
+
+    <string name="next">Next</string>
+    <string name="name_surname">Name Surname</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">E-mail</string>
+    <string name="city">City</string>
+    <string name="start_survey">Start the Survey</string>
+    <string name="finish_survey">Finish the Survey</string>
+    <string name="retry">Retry</string>
+    <string name="question_1">What is your favorite color?</string>
+    <string name="question_2">Do you prefer tea or coffee?</string>
+    <string name="question_3">What\'s your favorite season?</string>
+    <string name="too_long">Too long!</string>
+    <string name="empty_text">This cannot be empty!</string>
+</resources>

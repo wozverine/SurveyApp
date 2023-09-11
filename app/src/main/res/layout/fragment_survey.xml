@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SurveyFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ActionBar.TabText"
+            android:id="@+id/textview_name_survey_fragment"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/name_surname">
+        </TextView>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/text_input_question_1_survey_fragment"
+            app:startIconDrawable="@drawable/ic_question"
+            android:layout_margin="10dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_checkmark"
+            app:counterMaxLength="12">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_edit_question_1_survey_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="text"
+                android:hint="@string/question_1">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/text_input_question_2_survey_fragment"
+            app:startIconDrawable="@drawable/ic_question"
+            android:layout_margin="10dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_checkmark"
+            app:counterMaxLength="7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_edit_question_2_survey_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="text"
+                android:hint="@string/question_2">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/text_input_question_3_survey_fragment"
+            app:startIconDrawable="@drawable/ic_question"
+            android:layout_margin="10dp"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_checkmark"
+            app:counterMaxLength="8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_edit_question_3_survey_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:inputType="text"
+                android:hint="@string/question_3">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_finish_survey"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorButton"
+            android:text="@string/finish_survey">
+        </Button>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

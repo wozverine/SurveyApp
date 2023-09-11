@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Anket</string>
+    <string name="action_settings">Ayarlar</string>
+
+    <string name="next">Sonraki</string>
+    <string name="name_surname">İsim Soyisim</string>
+    <string name="phone_number">Telefon Numarası</string>
+    <string name="email">Mail Adresi</string>
+    <string name="city">Şehir</string>
+    <string name="start_survey">Ankete Başla</string>
+    <string name="finish_survey">Anketi Bitir</string>
+    <string name="retry">Tekrar başla</string>
+    <string name="question_1">En sevdiğiniz renk nedir?</string>
+    <string name="question_2">Çay mı kahve mi?</string>
+    <string name="question_3">En sevdiğiniz mevsim?</string>
+    <string name="too_long">Çok uzun!</string>
+    <string name="empty_text">Zorunlu alan</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NameFragment">
+
+    <fragment
+        android:id="@+id/NameFragment"
+        android:name="com.glitch.surveyapp.ui.NameFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_name">
+
+        <action
+            android:id="@+id/action_NameFragment_to_PersonalInfoFragment"
+            app:destination="@id/PersonalInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PersonalInfoFragment"
+        android:name="com.glitch.surveyapp.ui.PersonalInfoFragment"
+        android:label="@string/personal_info_fragment_label"
+        tools:layout="@layout/fragment_personal_info">
+
+        <action
+            android:id="@+id/action_PersonalInfoFragment_to_SurveyFragment"
+            app:destination="@id/surveyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/surveyFragment"
+        android:name="com.glitch.surveyapp.ui.SurveyFragment"
+        android:label="fragment_survey"
+        tools:layout="@layout/fragment_survey" />
+        <action
+            android:id="@+id/action_SurveyFragment_to_ResultFragment"
+            app:destination="@id/resultFragment" />
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.glitch.surveyapp.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_survey" />
+    <action
+        android:id="@+id/action_ResultFragment_to_NameFragment"
+        app:destination="@id/NameFragment" />
+</navigation>
