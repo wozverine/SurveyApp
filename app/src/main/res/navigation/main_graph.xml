@@ -8,8 +8,9 @@
     <fragment
         android:id="@+id/NameFragment"
         android:name="com.glitch.surveyapp.ui.NameFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/name_fragment_label"
         tools:layout="@layout/fragment_name">
+
 
         <action
             android:id="@+id/action_NameFragment_to_PersonalInfoFragment"
@@ -21,6 +22,10 @@
         android:name="com.glitch.surveyapp.ui.PersonalInfoFragment"
         android:label="@string/personal_info_fragment_label"
         tools:layout="@layout/fragment_personal_info">
+
+        <argument
+            android:name="person"
+            app:argType="com.glitch.surveyapp.data.model.Person" />
 
         <action
             android:id="@+id/action_PersonalInfoFragment_to_SurveyFragment"

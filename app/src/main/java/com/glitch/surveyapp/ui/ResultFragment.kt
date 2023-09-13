@@ -12,7 +12,9 @@ import com.glitch.surveyapp.databinding.FragmentResultBinding
 class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding? = null
     private val binding get() = _binding!!
-    
+
+
+    //private val args by navArgs<NameFragmentArgs>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

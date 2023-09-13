@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.glitch.surveyapp.R
 import com.glitch.surveyapp.databinding.FragmentPersonalInfoBinding
 
@@ -16,7 +17,10 @@ class PersonalInfoFragment : Fragment() {
     private val binding get() = _binding!!
     private var phoneNumberEntered = false
     private var mailEntered = false
-    private var counrtyEntered = false
+    private var countyEntered = false
+
+    private val args by navArgs<PersonalInfoFragmentArgs>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,8 +34,8 @@ class PersonalInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && counrtyEntered
+        binding.personalEdittextName.text = "Hello ${args.person.name.toString()}"
+        binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         binding.buttonStartSurvey.setOnClickListener {
             findNavController().navigate(R.id.action_PersonalInfoFragment_to_SurveyFragment)
         }
@@ -47,7 +51,7 @@ class PersonalInfoFragment : Fragment() {
                 binding.personalInfoPhoneNumberInput.error = null
                 phoneNumberEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && counrtyEntered
+            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
         binding.personalInfoMailEdit.doOnTextChanged { text, start, before, count ->
@@ -61,21 +65,21 @@ class PersonalInfoFragment : Fragment() {
                 binding.personalInfoMailInput.error = null
                 mailEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && counrtyEntered
+            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
         binding.personalInfoCountryEdit.doOnTextChanged { text, start, before, count ->
             if (text!!.length > 15) {
                 binding.personalInfoCountryInput.error = getString(R.string.too_long)
-                counrtyEntered = false
+                countyEntered = false
             } else if (text.isEmpty()) {
                 binding.personalInfoCountryInput.error = getString(R.string.empty_text)
-                counrtyEntered = false
+                countyEntered = false
             } else {
                 binding.personalInfoCountryInput.error = null
-                counrtyEntered = true
+                countyEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && counrtyEntered
+            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
     }
 
