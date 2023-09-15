@@ -9,6 +9,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.glitch.surveyapp.R
+import com.glitch.surveyapp.data.model.Person
 import com.glitch.surveyapp.databinding.FragmentPersonalInfoBinding
 
 class PersonalInfoFragment : Fragment() {
@@ -34,13 +35,21 @@ class PersonalInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.personalEdittextName.text = "Hello ${args.person.name.toString()}"
+        binding.personalEdittextName.text = buildString{
+            append(getString(R.string.hello))
+            append(" ")
+            append(args.person.name)
+        }
         binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         binding.buttonStartSurvey.setOnClickListener {
-            findNavController().navigate(R.id.action_PersonalInfoFragment_to_SurveyFragment)
+            val person = Person(args.person.name,binding.personalInfoPhoneNumberEdit.text.toString().toLong(),
+                binding.personalInfoMailEdit.text.toString(),binding.personalInfoCityEdit.text.toString(),
+                "","","")
+            val action = PersonalInfoFragmentDirections.actionPersonalInfoFragmentToSurveyFragment(person)
+            findNavController().navigate(action)
         }
 
-        binding.personalInfoPhoneNumberEdit.doOnTextChanged { text, start, before, count ->
+        binding.personalInfoPhoneNumberEdit.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 13) {
                 binding.personalInfoPhoneNumberInput.error = getString(R.string.too_long)
                 phoneNumberEntered = false
@@ -54,7 +63,7 @@ class PersonalInfoFragment : Fragment() {
             binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
-        binding.personalInfoMailEdit.doOnTextChanged { text, start, before, count ->
+        binding.personalInfoMailEdit.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 25) {
                 binding.personalInfoMailInput.error = getString(R.string.too_long)
                 mailEntered = false
@@ -68,7 +77,7 @@ class PersonalInfoFragment : Fragment() {
             binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
-        binding.personalInfoCountryEdit.doOnTextChanged { text, start, before, count ->
+        binding.personalInfoCityEdit.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 15) {
                 binding.personalInfoCountryInput.error = getString(R.string.too_long)
                 countyEntered = false

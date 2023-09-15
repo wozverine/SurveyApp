@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.navigation.fragment.findNavController
 import com.glitch.surveyapp.R
-import androidx.navigation.fragment.navArgs
 import com.glitch.surveyapp.databinding.FragmentNameBinding
 import com.glitch.surveyapp.data.model.Person
 
@@ -33,13 +32,13 @@ class NameFragment : Fragment() {
 
         binding.nextToPersonal.isEnabled = false
         binding.nextToPersonal.setOnClickListener {
-            val person = Person(binding.nameEditText.text.toString(),0,"","","","")
+            val person = Person(binding.nameEditText.text.toString(),0,"","","","","")
             val action = NameFragmentDirections.actionNameFragmentToPersonalInfoFragment(person)
             findNavController().navigate(action)
             //findNavController().navigate(R.id.action_NameFragment_to_PersonalInfoFragment)
         }
 
-        binding.nameEditText.doOnTextChanged { text, start, before, count ->
+        binding.nameEditText.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 20) {
                 binding.inputLayoutMain.error = getString(R.string.too_long)
                 nameEntered = false

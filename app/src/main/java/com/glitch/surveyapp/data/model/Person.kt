@@ -8,6 +8,7 @@ data class Person(
     val name: String,
     val phoneNumber: Long,
     val eMail: String,
+    val city: String,
     val answer1: String,
     val answer2: String,
     val answer3: String

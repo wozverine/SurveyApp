@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxLength="13"
+                    android:textColor="@color/colorText"
                     android:inputType="phone"
                     android:hint="@string/phone_number">
                 </com.google.android.material.textfield.TextInputEditText>
@@ -72,8 +72,8 @@
                     android:id="@+id/personal_info_mail_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
                     android:layout_gravity="center"
-                    android:maxLength="25"
                     android:inputType="text"
                     android:hint="@string/email">
                 </com.google.android.material.textfield.TextInputEditText>
@@ -94,11 +94,11 @@
                 app:counterMaxLength="15">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/personal_info_country_edit"
+                    android:id="@+id/personal_info_city_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:maxLength="15"
+                    android:textColor="@color/colorText"
                     android:inputType="text"
                     android:hint="@string/city">
                 </com.google.android.material.textfield.TextInputEditText>

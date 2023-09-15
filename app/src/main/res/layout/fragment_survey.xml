@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:inputType="text"
+                android:textColor="@color/colorText"
                 android:hint="@string/question_1">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:inputType="text"
+                android:textColor="@color/colorText"
                 android:hint="@string/question_2">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:inputType="text"
+                android:textColor="@color/colorText"
                 android:hint="@string/question_3">
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
