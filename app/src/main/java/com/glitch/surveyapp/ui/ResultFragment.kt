@@ -1,10 +1,10 @@
 package com.glitch.surveyapp.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.glitch.surveyapp.R
@@ -25,40 +25,44 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonRetry.setOnClickListener {
-            findNavController().navigate(R.id.action_ResultFragment_to_NameFragment)
-        }
+
 
         binding.resultTvName.text = args.person.name
         binding.resultTvPhone.text = buildString {
             append(getString(R.string.phone_number))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.phoneNumber.toString())
         }
         binding.resultTvCity.text = buildString {
             append(getString(R.string.city))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.city)
         }
         binding.resultTvEmail.text = buildString {
             append(getString(R.string.email))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.eMail)
         }
         binding.resultTvQ1.text = buildString {
             append(getString(R.string.question_1))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.answer1)
         }
         binding.resultTvQ2.text = buildString {
             append(getString(R.string.question_2))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.answer2)
         }
         binding.resultTvQ3.text = buildString {
             append(getString(R.string.question_3))
-            append(System.getProperty("line.separator"))
+            appendLine()
             append(args.person.answer3)
+        }
+        binding.resultBtnExit.setOnClickListener {
+            findNavController().popBackStack(R.id.NameFragment, false)
+        }
+        binding.resultBtnRetry.setOnClickListener {
+            findNavController().popBackStack(R.id.NameFragment, false)
         }
     }
 

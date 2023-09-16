@@ -35,60 +35,67 @@ class PersonalInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.personalEdittextName.text = buildString{
+        binding.personalInfoTxtName.text = buildString {
             append(getString(R.string.hello))
             append(" ")
             append(args.person.name)
         }
-        binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
-        binding.buttonStartSurvey.setOnClickListener {
-            val person = Person(args.person.name,binding.personalInfoPhoneNumberEdit.text.toString().toLong(),
-                binding.personalInfoMailEdit.text.toString(),binding.personalInfoCityEdit.text.toString(),
-                "","","")
-            val action = PersonalInfoFragmentDirections.actionPersonalInfoFragmentToSurveyFragment(person)
+        binding.personalInfoBtnStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
+        binding.personalInfoBtnStartSurvey.setOnClickListener {
+            val person = Person(
+                args.person.name,
+                binding.personalInfoEtxtPhone.text.toString().toLong(),
+                binding.personalInfoEtxtMail.text.toString(),
+                binding.personalInfoEtxtCity.text.toString(),
+                "",
+                "",
+                ""
+            )
+            val action =
+                PersonalInfoFragmentDirections.actionPersonalInfoFragmentToSurveyFragment(person)
             findNavController().navigate(action)
         }
 
-        binding.personalInfoPhoneNumberEdit.doOnTextChanged { text, _, _, _ ->
+        binding.personalInfoEtxtPhone.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 13) {
-                binding.personalInfoPhoneNumberInput.error = getString(R.string.too_long)
+                binding.personalInfoTxtfieldPhone.error = getString(R.string.too_long)
                 phoneNumberEntered = false
             } else if (text.isEmpty()) {
-                binding.personalInfoPhoneNumberInput.error = getString(R.string.empty_text)
+                binding.personalInfoTxtfieldPhone.error = getString(R.string.empty_text)
                 phoneNumberEntered = false
             } else {
-                binding.personalInfoPhoneNumberInput.error = null
+                binding.personalInfoTxtfieldPhone.error = null
                 phoneNumberEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
+            binding.personalInfoBtnStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
-        binding.personalInfoMailEdit.doOnTextChanged { text, _, _, _ ->
+        binding.personalInfoEtxtMail.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 25) {
-                binding.personalInfoMailInput.error = getString(R.string.too_long)
+                binding.personalInfoTxtfieldMail.error = getString(R.string.too_long)
                 mailEntered = false
             } else if (text.isEmpty()) {
-                binding.personalInfoMailInput.error = getString(R.string.empty_text)
+                binding.personalInfoTxtfieldMail.error = getString(R.string.empty_text)
                 mailEntered = false
             } else {
-                binding.personalInfoMailInput.error = null
+                binding.personalInfoTxtfieldMail.error = null
                 mailEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
+            binding.personalInfoBtnStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
 
-        binding.personalInfoCityEdit.doOnTextChanged { text, _, _, _ ->
+        binding.personalInfoEtxtCity.doOnTextChanged { text, _, _, _ ->
             if (text!!.length > 15) {
-                binding.personalInfoCountryInput.error = getString(R.string.too_long)
+                binding.personalInfoTxtfieldCity.error = getString(R.string.too_long)
                 countyEntered = false
             } else if (text.isEmpty()) {
-                binding.personalInfoCountryInput.error = getString(R.string.empty_text)
+                binding.personalInfoTxtfieldCity.error = getString(R.string.empty_text)
                 countyEntered = false
             } else {
-                binding.personalInfoCountryInput.error = null
+                binding.personalInfoTxtfieldCity.error = null
                 countyEntered = true
             }
-            binding.buttonStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
+            binding.personalInfoBtnStartSurvey.isEnabled = phoneNumberEntered && mailEntered && countyEntered
         }
     }
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,100 +17,95 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/personal_info_txt_name"
+                style="@style/Widget.AppCompat.ActionBar.TabText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.ActionBar.TabText"
-                android:id ="@+id/personal_edittext_name"
-                android:layout_marginVertical="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:text="@string/name_surname">
-            </TextView>
+                android:layout_marginVertical="10dp"
+                android:text="@string/name_surname" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/personal_info_txtfield_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/personal_info_phone_number_input"
-                app:startIconDrawable="@drawable/ic_phone"
                 android:layout_margin="10dp"
                 app:counterEnabled="true"
+                app:counterMaxLength="13"
+                app:endIconDrawable="@drawable/ic_checkmark"
                 app:endIconMode="custom"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
-                app:endIconDrawable="@drawable/ic_checkmark"
                 app:prefixText="+90"
                 app:prefixTextColor="@color/purple_1"
-                app:counterMaxLength="13">
+                app:startIconDrawable="@drawable/ic_phone">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/personal_info_phone_number_edit"
+                    android:id="@+id/personal_info_etxt_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/colorText"
+                    android:hint="@string/phone_number"
                     android:inputType="phone"
-                    android:hint="@string/phone_number">
-                </com.google.android.material.textfield.TextInputEditText>
+                    android:textColor="@color/colorText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/personal_info_txtfield_mail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/personal_info_mail_input"
-                app:startIconDrawable="@drawable/ic_mail"
                 android:layout_margin="10dp"
                 app:counterEnabled="true"
+                app:counterMaxLength="25"
+                app:endIconDrawable="@drawable/ic_checkmark"
+                app:endIconMode="custom"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
-                app:endIconMode="custom"
-                app:endIconDrawable="@drawable/ic_checkmark"
-                app:counterMaxLength="25">
+                app:startIconDrawable="@drawable/ic_mail">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/personal_info_mail_edit"
+                    android:id="@+id/personal_info_etxt_mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorText"
                     android:layout_gravity="center"
+                    android:hint="@string/email"
                     android:inputType="text"
-                    android:hint="@string/email">
-                </com.google.android.material.textfield.TextInputEditText>
+                    android:textColor="@color/colorText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/personal_info_txtfield_city"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/personal_info_country_input"
-                app:startIconDrawable="@drawable/ic_location"
                 android:layout_margin="10dp"
                 app:counterEnabled="true"
+                app:counterMaxLength="15"
+                app:endIconDrawable="@drawable/ic_checkmark"
+                app:endIconMode="custom"
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_error"
-                app:endIconMode="custom"
-                app:endIconDrawable="@drawable/ic_checkmark"
-                app:counterMaxLength="15">
+                app:startIconDrawable="@drawable/ic_location">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/personal_info_city_edit"
+                    android:id="@+id/personal_info_etxt_city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/colorText"
+                    android:hint="@string/city"
                     android:inputType="text"
-                    android:hint="@string/city">
-                </com.google.android.material.textfield.TextInputEditText>
+                    android:textColor="@color/colorText" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/personal_info_btn_start_survey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_start_survey"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/colorButton"
-                android:text="@string/start_survey">
-            </Button>
+                android:text="@string/start_survey" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

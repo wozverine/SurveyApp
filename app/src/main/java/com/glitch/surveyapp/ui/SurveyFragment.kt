@@ -31,58 +31,63 @@ class SurveyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonFinishSurvey.isEnabled = q1 && q2 && q3
-        binding.textviewNameSurveyFragment.text = buildString {
+        binding.surveyBtnFinish.isEnabled = q1 && q2 && q3
+        binding.surveyTvName.text = buildString {
             append(getString(R.string.hello))
-            append("")
+            append(" ")
             append(args.person.name)
         }
-        binding.buttonFinishSurvey.setOnClickListener {
-            val person = Person(args.person.name,args.person.phoneNumber, args.person.eMail, args.person.city,
-                binding.textEditQuestion1SurveyFragment.text.toString(),
-                binding.textEditQuestion2SurveyFragment.text.toString(),
-                binding.textEditQuestion3SurveyFragment.text.toString())
+        binding.surveyBtnFinish.setOnClickListener {
+            val person = Person(
+                args.person.name, args.person.phoneNumber, args.person.eMail, args.person.city,
+                binding.surveyEtxtQ1.text.toString(),
+                binding.surveyEtxtQ2.text.toString(),
+                binding.surveyEtxtQ3.text.toString()
+            )
             val action = SurveyFragmentDirections.actionSurveyFragmentToResultFragment(person)
             findNavController().navigate(action)
         }
 
-        binding.textEditQuestion1SurveyFragment.doOnTextChanged { text, _, _, _ ->
-            if (text!!.length > 12){
-                binding.textInputQuestion1SurveyFragment.error = getString(R.string.too_long)
+        binding.surveyEtxtQ1.doOnTextChanged { text, _, _, _ ->
+            if (text!!.length > 12) {
+                binding.surveyTxtfieldQ1.error = getString(R.string.too_long)
                 q1 = false
-            } else if (text.isEmpty()){
+            } else if (text.isEmpty()) {
+                binding.surveyTxtfieldQ1.error = getString(R.string.empty_text)
                 q1 = false
             } else {
-                binding.textInputQuestion1SurveyFragment.error = null
+                binding.surveyTxtfieldQ1.error = null
                 q1 = true
             }
-            binding.buttonFinishSurvey.isEnabled = q1 && q2 && q3
+            binding.surveyBtnFinish.isEnabled = q1 && q2 && q3
         }
 
-        binding.textEditQuestion2SurveyFragment.doOnTextChanged { text, _, _, _ ->
-            if (text!!.length > 7){
-                binding.textInputQuestion2SurveyFragment.error = getString(R.string.too_long)
+        binding.surveyEtxtQ2.doOnTextChanged { text, _, _, _ ->
+            if (text!!.length > 7) {
+                binding.surveyTxtfieldQ2.error = getString(R.string.too_long)
                 q2 = false
-            } else if (text.isEmpty()){
+            } else if (text.isEmpty()) {
+                binding.surveyTxtfieldQ2.error = getString(R.string.empty_text)
                 q2 = false
             } else {
-                binding.textInputQuestion2SurveyFragment.error = null
+                binding.surveyTxtfieldQ2.error = null
                 q2 = true
             }
-            binding.buttonFinishSurvey.isEnabled = q1 && q2 && q3
+            binding.surveyBtnFinish.isEnabled = q1 && q2 && q3
         }
 
-        binding.textEditQuestion3SurveyFragment.doOnTextChanged { text, _, _, _ ->
-            if (text!!.length > 8){
-                binding.textInputQuestion3SurveyFragment.error = getString(R.string.too_long)
+        binding.surveyEtxtQ3.doOnTextChanged { text, _, _, _ ->
+            if (text!!.length > 8) {
+                binding.surveyTxtfieldQ3.error = getString(R.string.too_long)
                 q3 = false
-            } else if (text.isEmpty()){
+            } else if (text.isEmpty()) {
+                binding.surveyTxtfieldQ3.error = getString(R.string.empty_text)
                 q3 = false
             } else {
-                binding.textInputQuestion3SurveyFragment.error = null
+                binding.surveyTxtfieldQ3.error = null
                 q3 = true
             }
-            binding.buttonFinishSurvey.isEnabled = q1 && q2 && q3
+            binding.surveyBtnFinish.isEnabled = q1 && q2 && q3
         }
     }
 

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.AppCompat.ActionBar.TabText"
-            android:id="@+id/textview_name_survey_fragment"
+            android:id="@+id/survey_tv_name"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="20dp"
             android:text="@string/name_surname">
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/text_input_question_1_survey_fragment"
+            android:id="@+id/survey_txtfield_q1"
             app:startIconDrawable="@drawable/ic_question"
             android:layout_margin="10dp"
             app:counterEnabled="true"
@@ -38,7 +38,7 @@
             app:counterMaxLength="12">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_edit_question_1_survey_fragment"
+                android:id="@+id/survey_etxt_q1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/text_input_question_2_survey_fragment"
+            android:id="@+id/survey_txtfield_q2"
             app:startIconDrawable="@drawable/ic_question"
             android:layout_margin="10dp"
             app:counterEnabled="true"
@@ -63,7 +63,7 @@
             app:counterMaxLength="7">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_edit_question_2_survey_fragment"
+                android:id="@+id/survey_etxt_q2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/text_input_question_3_survey_fragment"
+            android:id="@+id/survey_txtfield_q3"
             app:startIconDrawable="@drawable/ic_question"
             android:layout_margin="10dp"
             app:counterEnabled="true"
@@ -88,7 +88,7 @@
             app:counterMaxLength="8">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_edit_question_3_survey_fragment"
+                android:id="@+id/survey_etxt_q3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -101,7 +101,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button_finish_survey"
+            android:id="@+id/survey_btn_finish"
             android:layout_gravity="center"
             android:backgroundTint="@color/colorButton"
             android:text="@string/finish_survey">
