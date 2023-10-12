@@ -6,3 +6,6 @@ UPSchool Android Program Homework 1
 </p>
 
 <img align="center" src="https://github.com/wozverine/SurveyApp/assets/23726873/29f501a6-9a85-43db-919d-0b8e0d9bc914" />
+<p>
+  <h4> Medium Link for detailed process: https://medium.com/@iremcingi/simple-survey-app-kotlin-practice-homework-1-8b27b6ed88b9 </h4>
+</p>
